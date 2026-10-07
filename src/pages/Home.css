@@ -1,0 +1,31 @@
+#home {
+  width: 100%;
+  height: auto;
+}
+
+.header {
+  width: 100%;
+  padding: 25px;
+  display: flex;
+}
+
+.header nav {
+  display: flex;
+  gap: 40px;
+}
+
+.header nav a {
+  color: white;
+}
+
+.hero-section {
+  width: 80%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-section h2,
+p {
+  color: white;
+}

@@ -1,0 +1,12 @@
+{
+  "navbar": {
+    "home": "Início",
+    "about": "Sobre",
+    "projects": "Projetos",
+    "contact": "Contato"
+  },
+  "home": {
+    "greeting": "Olá, eu sou",
+    "description": "Desenvolvedor Front-End"
+  }
+}
