@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./Home.css";
 import Skills from "../components/Skills.jsx";
 import fotoDavid from "../assets/imagens/davidfoto.jpg";
+import logoPuc from "../assets/imagens/logoPuc.png";
 
 function Home() {
   const [skillLanguages, setSkillLanguages] = useState([
@@ -47,14 +48,6 @@ function Home() {
   return (
     <section id="home">
       <div>
-        <header className="header">
-          <nav className="header-links">
-            <a href="#home">home</a>
-            <a href="#resume">resume</a>
-            <a href="#projects">projects</a>
-            <a href="#contact">contact</a>
-          </nav>
-        </header>
         <div className="hero-section">
           <h2>David Aurélio Pedrosa</h2>
           <p>
@@ -100,6 +93,29 @@ function Home() {
             <div className="skills-cards">
               <h3>Frameworks</h3>
               <Skills skills={skillFrameworks} />
+            </div>
+          </div>
+        </div>
+
+        <div className="section-education">
+          <h2>EDUCAÇÃO</h2>
+          <div style={{ display: "flex", gap: 100, marginTop: 50 }}>
+            <div>
+              <img src={logoPuc} alt="Logo da Puc Minas" />
+            </div>
+            <div className="education-about">
+              <h3>Bacharelado em Engenharia de Software</h3>
+              <h4>
+                Pontifícia Universidade Católica de Minas Gerais - Puc Minas
+              </h4>
+              <p>
+                <span>Fev 2026</span> -{" "}
+                <span>
+                  Dez 2029
+                  <br />
+                </span>{" "}
+                <span style={{ fontSize: 10 }}>*Previsão</span>
+              </p>
             </div>
           </div>
         </div>
