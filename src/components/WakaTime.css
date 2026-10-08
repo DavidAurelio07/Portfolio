@@ -1,0 +1,111 @@
+.waka {
+  --text-soft: #e5e7eb;
+  --text-muted: #9ca3af;
+  --text-dim: #6b7280;
+
+  background: #161628;
+  border: 1px solid rgba(139, 92, 246, 0.35);
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 760px;
+  margin: 0 auto;
+  color: var(--text-soft);
+}
+
+.waka__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.waka__title {
+  margin: 0;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #22d3ee;
+}
+
+.waka__total {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #8b5cf6;
+}
+
+.waka__msg {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.waka__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.waka__row {
+  display: grid;
+  grid-template-columns: 24px 130px 1fr auto;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.9rem;
+}
+
+.waka__icon {
+  display: flex;
+  font-size: 1.2rem;
+}
+
+.waka__name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.waka__bar {
+  height: 10px;
+  border-radius: 999px;
+  background: #0b0b14;
+  overflow: hidden;
+}
+
+.waka__fill {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+}
+
+.waka__value {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.waka__link {
+  display: inline-block;
+  margin-top: 20px;
+  color: #22d3ee;
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
+.waka__link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .waka__row {
+    grid-template-columns: 24px 1fr auto;
+  }
+
+  .waka__bar {
+    grid-column: 1 / -1;
+    order: 4;
+  }
+}

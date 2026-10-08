@@ -7,7 +7,7 @@ function Header() {
       <nav>
         <Link to="/">Home</Link>
 
-        <Link to="/">Dados</Link>
+        <Link to="/dados">Dados</Link>
 
         <Link to="/resume">Currículo</Link>
 

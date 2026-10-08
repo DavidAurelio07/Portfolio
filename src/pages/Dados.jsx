@@ -4,6 +4,7 @@ function Dados() {
   return (
     <section>
       <h2>Informações sobre meu uso com programação</h2>
+      <WakaTime />
     </section>
   );
 }

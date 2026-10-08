@@ -19,7 +19,7 @@ function App() {
 
         <Route path="/contate" element={<Contato />} />
 
-        <Route path="/dados" elemente={<Dados />} />
+        <Route path="/dados" element={<Dados />} />
       </Routes>
     </BrowserRouter>
   );
