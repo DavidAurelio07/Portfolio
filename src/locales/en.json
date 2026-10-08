@@ -1,12 +1,13 @@
 {
   "navbar": {
-    "home": "Home",
-    "about": "About",
-    "projects": "Projects",
-    "contact": "Contact"
+    "home": "HOME",
+    "resume": "RESUME",
+    "projects": "PROJECTS",
+    "contact": "CONTACT"
   },
+
   "home": {
-    "greeting": "Hello, I'm",
-    "description": "Front-End Developer"
+    "name": "David Aurélio Pedrosa",
+    "description": "Software Engineering student at PUC Minas, currently in the 2nd semester."
   }
 }

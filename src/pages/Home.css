@@ -7,6 +7,7 @@
   width: 100%;
   padding: 25px;
   display: flex;
+  background-color: #0b0b14;
 }
 
 .header nav {
@@ -16,6 +17,11 @@
 
 .header nav a {
   color: white;
+}
+
+.header nav a:hover {
+  color: #22d3ee;
+  text-decoration: #8b5cf6;
 }
 
 .hero-section {
@@ -28,4 +34,70 @@
 .hero-section h2,
 p {
   color: white;
+}
+
+.sobre-hero {
+  width: 100;
+}
+
+.skills-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skills-section h2 {
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  width: 100%;
+}
+
+.skills-cards {
+  width: 100%;
+  max-width: 280px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background-color: #161628;
+  border: 1px solid #2a2a48;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.skills-cards h3 {
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.skills-cards:hover {
+  background-color: #1e1e38;
+  border-color: #4f46e5;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(79, 70, 229, 0.2);
 }

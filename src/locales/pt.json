@@ -1,12 +1,13 @@
 {
   "navbar": {
-    "home": "Início",
-    "about": "Sobre",
-    "projects": "Projetos",
-    "contact": "Contato"
+    "home": "INÍCIO",
+    "resume": "CURRÍCULO",
+    "projects": "PROJETOS",
+    "contact": "CONTATO"
   },
+
   "home": {
-    "greeting": "Olá, eu sou",
-    "description": "Desenvolvedor Front-End"
+    "name": "David Aurélio Pedrosa",
+    "description": "Estudante de Engenharia de Software na PUC Minas, atualmente no 2º período."
   }
 }

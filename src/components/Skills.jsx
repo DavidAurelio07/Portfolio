@@ -1,14 +1,15 @@
-import "./Skill.css";
+import "./Skills.css";
 
-function Skills() {
+function Skills({ skills = [], onSkillClick }) {
   return (
-    <div>
-      <h1>Principais Linguagens</h1>
-      <div>
-        <h4>Python</h4>
-        <p>Nivél Intermédiario</p>
-      </div>
-    </div>
+    <ul>
+      {skills.map((skill) => (
+        <li key={skill.id}>
+          <p className="skill-title">{skill.title}</p>
+        </li>
+      ))}
+    </ul>
   );
 }
+
 export default Skills;
