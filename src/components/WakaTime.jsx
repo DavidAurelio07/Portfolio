@@ -3,7 +3,33 @@ import WAKATIME_CONFIG from "../config/wakaTimeConfig";
 import { languageStyle, OTHERS_STYLE } from "../data/wakaTimeLanguages";
 import "./WakaTime.css";
 
-function buildRows(rawItems) {
+function formatDuration(totalSeconds) {
+  if (totalSeconds < 60) return "<1min";
+  const hours = Math.floor(totalSeconds / 3600);
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+  return hours > 0 ? `${hours}h ${minutes}min` : `${minutes}min`;
+}
+
+function formatJoinedDate(isoDate) {
+  return new Intl.DateTimeFormat("pt-BR", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    timeZone: "UTC",
+  }).format(new Date(`${isoDate}T00:00:00Z`));
+}
+
+function parseBadgeSeconds(svgText) {
+  const hours = svgText.match(/(\d+)\s*hrs?/i);
+  const minutes = svgText.match(/(\d+)\s*mins?/i);
+  if (!hours && !minutes) return null;
+  return (
+    (hours ? Number(hours[1]) : 0) * 3600 +
+    (minutes ? Number(minutes[1]) : 0) * 60
+  );
+}
+
+function buildRows(rawItems, totalSeconds) {
   const hidden = WAKATIME_CONFIG.HIDDEN_LANGUAGES;
   const items = rawItems
     .filter((item) => !hidden.includes(item.name) && item.percent > 0)
@@ -16,13 +42,16 @@ function buildRows(rawItems) {
   const rows = top.map((item) => ({
     name: item.name,
     percent: item.percent,
+    seconds: (item.percent / 100) * totalSeconds,
     style: languageStyle(item.name),
   }));
 
   if (rest.length > 0) {
+    const restPercent = rest.reduce((sum, item) => sum + item.percent, 0);
     rows.push({
       name: `+ ${rest.length} linguagens`,
-      percent: rest.reduce((sum, item) => sum + item.percent, 0),
+      percent: restPercent,
+      seconds: (restPercent / 100) * totalSeconds,
       style: OTHERS_STYLE,
     });
   }
@@ -31,19 +60,31 @@ function buildRows(rawItems) {
 }
 
 function WakaTime() {
-  const [rows, setRows] = useState([]);
+  const [data, setData] = useState({ rows: [], total: 0 });
   const [status, setStatus] = useState("loading");
 
   useEffect(() => {
     const controller = new AbortController();
 
-    fetch(WAKATIME_CONFIG.SHARE_URL, { signal: controller.signal })
-      .then((response) => {
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        return response.json();
-      })
-      .then((json) => {
-        setRows(buildRows(json.data ?? []));
+    const languagesRequest = fetch(WAKATIME_CONFIG.SHARE_URL, {
+      signal: controller.signal,
+    }).then((response) => {
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      return response.json();
+    });
+
+    // Se o selo não puder ser lido, seguimos com o valor do config
+    const badgeRequest = fetch(WAKATIME_CONFIG.BADGE_URL, {
+      signal: controller.signal,
+    })
+      .then((response) => response.text())
+      .then(parseBadgeSeconds)
+      .catch(() => null);
+
+    Promise.all([languagesRequest, badgeRequest])
+      .then(([json, badgeSeconds]) => {
+        const total = badgeSeconds ?? WAKATIME_CONFIG.FALLBACK_TOTAL_SECONDS;
+        setData({ rows: buildRows(json.data ?? [], total), total });
         setStatus("ok");
       })
       .catch((error) => {
@@ -56,7 +97,19 @@ function WakaTime() {
   return (
     <section className="waka" id="wakatime">
       <header className="waka__header">
-        <h2 className="waka__title">Linguagens mais usadas</h2>
+        <div>
+          <h2 className="waka__title">Linguagens mais usadas</h2>
+          <p className="waka__since">
+            No WakaTime desde {formatJoinedDate(WAKATIME_CONFIG.JOINED_DATE)}
+          </p>
+        </div>
+
+        {status === "ok" && (
+          <div className="waka__totalbox">
+            <span className="waka__total">{formatDuration(data.total)}</span>
+            <span className="waka__totallabel">horas totais</span>
+          </div>
+        )}
       </header>
 
       {status === "loading" && <p className="waka__msg">Carregando...</p>}
@@ -68,7 +121,7 @@ function WakaTime() {
 
       {status === "ok" && (
         <ul className="waka__list">
-          {rows.map((row) => {
+          {data.rows.map((row) => {
             const Icon = row.style.icon;
             const [from, to] = row.style.gradient;
             return (
@@ -86,7 +139,9 @@ function WakaTime() {
                     }}
                   />
                 </span>
-                <span className="waka__value">{row.percent.toFixed(1)}%</span>
+                <span className="waka__value">
+                  {formatDuration(row.seconds)} · {row.percent.toFixed(1)}%
+                </span>
               </li>
             );
           })}

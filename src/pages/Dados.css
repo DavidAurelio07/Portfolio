@@ -1,0 +1,22 @@
+#dados {
+  display: flex;
+  flex-direction: column;
+}
+
+#dados h2 {
+  color: white;
+}
+
+.dados-section {
+  display: flex;
+  margin: auto;
+  gap: 150px;
+}
+
+.dados-waka {
+  text-align: center;
+}
+
+.dados-git {
+  text-align: center;
+}

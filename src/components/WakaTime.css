@@ -14,7 +14,7 @@
 
 .waka__header {
   display: flex;
-  align-items: baseline;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 16px;
   margin-bottom: 20px;
@@ -28,11 +28,30 @@
   color: #22d3ee;
 }
 
+.waka__since {
+  margin: 6px 0 0;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.waka__totalbox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
 .waka__total {
-  margin: 0;
   font-size: 1.6rem;
   font-weight: 700;
   color: #8b5cf6;
+  line-height: 1.1;
+}
+
+.waka__totallabel {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
 }
 
 .waka__msg {
@@ -85,6 +104,8 @@
   color: var(--text-muted);
   font-size: 0.8rem;
   white-space: nowrap;
+  text-align: right;
+  min-width: 110px;
 }
 
 .waka__link {
@@ -100,6 +121,14 @@
 }
 
 @media (max-width: 600px) {
+  .waka__header {
+    flex-direction: column;
+  }
+
+  .waka__totalbox {
+    align-items: flex-start;
+  }
+
   .waka__row {
     grid-template-columns: 24px 1fr auto;
   }

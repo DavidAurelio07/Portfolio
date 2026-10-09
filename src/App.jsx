@@ -6,6 +6,7 @@ import Home from "./pages/Home.jsx";
 import Resume from "./pages/Resume.jsx";
 import Contato from "./pages/Contato.jsx";
 import Dados from "./pages/Dados.jsx";
+import Projects from "./pages/Projects.jsx";
 
 function App() {
   return (
@@ -18,6 +19,8 @@ function App() {
         <Route path="/resume" element={<Resume />} />
 
         <Route path="/contate" element={<Contato />} />
+
+        <Route path="/projetos" element={<Projects />} />
 
         <Route path="/dados" element={<Dados />} />
       </Routes>

@@ -1,0 +1,159 @@
+.gh {
+  background: #161628;
+  border: 1px solid rgba(139, 92, 246, 0.35);
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 760px;
+  margin: 0 auto;
+  color: #e5e7eb;
+}
+
+.gh__msg {
+  margin: 0;
+  color: #9ca3af;
+}
+
+.gh__profile {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.gh__avatar {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  border: 2px solid #8b5cf6;
+}
+
+.gh__name {
+  margin: 0 0 4px;
+  font-size: 1.3rem;
+  color: #e5e7eb;
+}
+
+.gh__user {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #22d3ee;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.gh__user:hover {
+  text-decoration: underline;
+}
+
+.gh__bio {
+  margin: 8px 0 0;
+  color: #9ca3af;
+  font-size: 0.9rem;
+}
+
+.gh__stats {
+  list-style: none;
+  margin: 0 0 16px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.gh__stats li {
+  background: #0b0b14;
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+}
+
+.gh__stats strong {
+  display: block;
+  font-size: 1.4rem;
+  color: #8b5cf6;
+}
+
+.gh__stats span {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #9ca3af;
+}
+
+.gh__tags {
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.gh__tags li {
+  border: 1px solid #22d3ee;
+  color: #22d3ee;
+  border-radius: 999px;
+  padding: 2px 12px;
+  font-size: 0.8rem;
+}
+
+.gh__repos {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.gh__repo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 14px;
+  background: #0b0b14;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s;
+}
+
+.gh__repo:hover {
+  border-color: #8b5cf6;
+}
+
+.gh__repo-name {
+  font-weight: 700;
+  color: #22d3ee;
+  word-break: break-word;
+}
+
+.gh__repo-desc {
+  flex: 1;
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.gh__repo-meta {
+  display: flex;
+  gap: 12px;
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+.gh__repo-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+@media (max-width: 600px) {
+  .gh__profile {
+    flex-direction: column;
+    text-align: center;
+  }
+}
