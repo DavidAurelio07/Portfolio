@@ -1,6 +1,9 @@
+import { useTranslation } from "react-i18next";
 import "./ProjectsDetails.css";
 
 function ProjectsDetails({ projects = [] }) {
+  const { t } = useTranslation();
+
   return (
     <div className="projects-grid">
       {projects.map((projeto) => (
@@ -22,7 +25,7 @@ function ProjectsDetails({ projects = [] }) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Ver no GitHub
+              {t("projects.viewOnGithub")}
             </a>
           </div>
         </article>

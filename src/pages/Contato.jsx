@@ -1,7 +1,10 @@
+import { useTranslation } from "react-i18next";
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 import "./Contato.css";
 
 const Contato = () => {
+  const { t } = useTranslation();
+
   const seuLinkedIn =
     "https://www.linkedin.com/in/david-aurélio-pedrosa-348aa92b5";
   const seuGitHub = "https://github.com/DavidAurelio07";
@@ -9,10 +12,8 @@ const Contato = () => {
 
   return (
     <div className="contato-container" style={{ padding: "0 1.5rem" }}>
-      <h3 className="contato-titulo">Entre em Contato</h3>
-      <p className="contato-subtitulo">
-        Sinta-se à vontade para se conectar ou me enviar uma mensagem.
-      </p>
+      <h3 className="contato-titulo">{t("contact.title")}</h3>
+      <p className="contato-subtitulo">{t("contact.subtitle")}</p>
 
       <div className="contato-links">
         {/* LinkedIn */}
@@ -43,7 +44,7 @@ const Contato = () => {
           <span>{seuEmail}</span>
         </a>
 
-        <h4>Tempo médio de resposta de 1 até 2 dias úteis</h4>
+        <h4>{t("contact.responseTime")}</h4>
       </div>
     </div>
   );

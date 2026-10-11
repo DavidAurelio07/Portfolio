@@ -1,0 +1,102 @@
+{
+  "meta": {
+    "title": "David Aurélio | Portfolio"
+  },
+  "common": {
+    "loading": "Loading..."
+  },
+  "header": {
+    "navLabel": "Main navigation",
+    "home": "Home",
+    "data": "Stats",
+    "resume": "Resume",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "switcher": {
+    "label": "Language",
+    "changeTo": "Switch to {{language}}"
+  },
+  "home": {
+    "hero": {
+      "subtitle": "Software Engineering student at PUC Minas, currently in the 2nd semester.",
+      "photoAlt": "Photo of David Aurélio Pedrosa",
+      "p1": "Since I was a kid, I started using my father's computer, and that sparked a strong interest in technology. In 2016, I learned a bit more about game development and had my first contact with programming.",
+      "p2": "In 2020, I felt the desire to get into programming. So I started the Programming 1 course at Escola CNI (Prime System), where I learned Programming Logic, Java and a bit of PHP. I really enjoyed it and later took Programming 2, focused on HTML, CSS and WordPress.",
+      "p3": "After those courses, I became interested in studying Information Technology at university. That's when I found the Software Engineering program at PUC Minas, and I started my degree in the first semester of 2026. During the program, I have been learning Python, web development with HTML, CSS and JavaScript, Java, Spring Boot and agile methodologies such as Scrum."
+    },
+    "skills": {
+      "title": "Skills",
+      "languages": "Languages",
+      "frameworks": "Frameworks",
+      "python": {
+        "title": "Python",
+        "description": "I have knowledge of Python, with programming logic."
+      },
+      "web": {
+        "title": "Web Development",
+        "description": "I have knowledge of web development, focused on HTML, CSS and JavaScript."
+      },
+      "java": {
+        "title": "Java",
+        "description": "I have knowledge of Java, focused on object-oriented programming."
+      },
+      "react": {
+        "title": "React",
+        "description": "I have knowledge of React, focused on web application development."
+      },
+      "spring": {
+        "title": "Spring Boot",
+        "description": "I have knowledge of Spring Boot, focused on REST API development."
+      }
+    },
+    "education": {
+      "title": "EDUCATION",
+      "logoAlt": "PUC Minas logo",
+      "degree": "Bachelor's Degree in Software Engineering",
+      "university": "Pontifical Catholic University of Minas Gerais - PUC Minas",
+      "start": "Feb 2026",
+      "end": "Dec 2029",
+      "expected": "*Expected"
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "viewOnGithub": "View on GitHub",
+    "ecoflux": {
+      "description": "Web platform built to make recycling and selective waste collection more accessible. EcoFlux connects citizens, collection points and partner companies, letting users find collection points, schedule pickups of recyclable materials and follow the collection calendar by region — making the process simpler and more accessible in everyday life."
+    },
+    "spaceEscape": {
+      "description": "Space Escape is a 2D game where the player controls a spaceship and must dodge meteors falling across the screen. During a run, repair kits appear at random and can be collected to restore the ship's health. The goal is to survive as long as possible and reach the highest score."
+    }
+  },
+  "resume": {
+    "download": "Download resume",
+    "frameTitle": "David's resume"
+  },
+  "data": {
+    "title": "My WakaTime and GitHub statistics",
+    "note": "Some data may be out of date, so I've shared the links to my WakaTime and GitHub profiles so you can see the latest."
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Feel free to connect or send me a message.",
+    "responseTime": "Average response time of 1 to 2 business days"
+  },
+  "wakatime": {
+    "title": "Most used languages",
+    "since": "On WakaTime since {{date}}",
+    "totalLabel": "total hours",
+    "error": "Could not load WakaTime data right now.",
+    "moreLanguages": "+ {{count}} languages",
+    "profile": "View WakaTime profile"
+  },
+  "github": {
+    "error": "Could not load GitHub data right now.",
+    "avatarAlt": "Photo of {{name}}",
+    "repos": "repositories",
+    "followers": "followers",
+    "stars": "stars",
+    "noDescription": "No description"
+  }
+}

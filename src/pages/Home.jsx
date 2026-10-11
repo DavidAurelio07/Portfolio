@@ -1,120 +1,91 @@
-import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import "./Home.css";
 import Skills from "../components/Skills.jsx";
 import fotoDavid from "../assets/imagens/davidfoto.jpg";
 import logoPuc from "../assets/imagens/logoPuc.png";
 
 function Home() {
-  const [skillLanguages, setSkillLanguages] = useState([
+  const { t } = useTranslation();
+
+  // Montadas a cada render para acompanhar o idioma escolhido
+  const skillLanguages = [
     {
       id: 1,
-      title: "Python",
-      description: "Possuo conhecimento em Python, com lógica de programação.",
-      isActive: false,
+      title: t("home.skills.python.title"),
+      description: t("home.skills.python.description"),
     },
     {
       id: 2,
-      title: "Desenvolvimento Web",
-      description:
-        "Possuo conhecimento em desenvolvimento web, com foco em HTML, CSS e JavaScript.",
-      isActive: false,
+      title: t("home.skills.web.title"),
+      description: t("home.skills.web.description"),
     },
     {
       id: 3,
-      title: "Java",
-      description:
-        "Possuo conhecimento em Java, com foco em programação orientada a objetos.",
-      isActive: false,
+      title: t("home.skills.java.title"),
+      description: t("home.skills.java.description"),
     },
-  ]);
+  ];
 
-  const [skillFrameworks, setSkillFrameworks] = useState([
+  const skillFrameworks = [
     {
       id: 1,
-      title: "React",
-      description:
-        "Possuo conhecimento em React, com foco em desenvolvimento de aplicações web.",
-      isActive: false,
+      title: t("home.skills.react.title"),
+      description: t("home.skills.react.description"),
     },
     {
       id: 2,
-      title: "Spring Boot",
-      description:
-        "Possuo conhecimento em Spring Boot, com foco em desenvolvimento de APIs REST.",
-      isActive: false,
+      title: t("home.skills.spring.title"),
+      description: t("home.skills.spring.description"),
     },
-  ]);
+  ];
 
   return (
     <section id="home">
       <div>
         <div className="hero-section">
           <h2>David Aurélio Pedrosa</h2>
-          <p>
-            Estudante de Engenharia de Software na PUC Minas, atualmente no 2º
-            Periodo.
-          </p>
+          <p>{t("home.hero.subtitle")}</p>
           <div className="sobre-hero">
-            <img src={fotoDavid} alt="Foto de David Aurélio Pedrosa" />
-            <p>
-              Desde pequeno, comecei a utilizar o computador do meu pai e, por
-              conta disso, desenvolvi um grande interesse pela área de
-              tecnologia. Em 2016, comecei a conhecer um pouco mais sobre
-              desenvolvimento de jogos, tendo também meu primeiro contato com
-              programação.
-            </p>
-            <p>
-              Em 2020, surgiu em mim a vontade de ingressar na área de
-              programação. Por isso, iniciei o curso de Programação 1 na Escola
-              CNI (Prime System), onde aprendi sobre Lógica de Programação, Java
-              e um pouco de PHP. Gostei muito da experiência e, posteriormente,
-              realizei o curso de Programação 2, com foco em HTML, CSS e
-              WordPress.
-            </p>
-            <p>
-              Após esses cursos, surgiu o interesse em cursar uma faculdade na
-              área de Tecnologia da Informação. Foi então que conheci o curso de
-              Engenharia de Software da PUC Minas e iniciei minha graduação no
-              primeiro semestre de 2026. Durante a graduação, venho adquirindo
-              conhecimentos em Python, desenvolvimento web com HTML, CSS e
-              JavaScript, Java, Spring Boot e metodologias ágeis, como Scrum.
-            </p>
+            <img src={fotoDavid} alt={t("home.hero.photoAlt")} />
+            <p>{t("home.hero.p1")}</p>
+            <p>{t("home.hero.p2")}</p>
+            <p>{t("home.hero.p3")}</p>
           </div>
         </div>
 
         <div className="skills-section">
-          <h2>Habilidades</h2>
+          <h2>{t("home.skills.title")}</h2>
           <div className="skills-container">
             <div className="skills-cards">
-              <h3>Linguagens</h3>
+              <h3>{t("home.skills.languages")}</h3>
               <Skills skills={skillLanguages} />
             </div>
 
             <div className="skills-cards">
-              <h3>Frameworks</h3>
+              <h3>{t("home.skills.frameworks")}</h3>
               <Skills skills={skillFrameworks} />
             </div>
           </div>
         </div>
 
         <div className="section-education">
-          <h2>EDUCAÇÃO</h2>
+          <h2>{t("home.education.title")}</h2>
           <div style={{ display: "flex", gap: 100, marginTop: 50 }}>
             <div>
-              <img src={logoPuc} alt="Logo da Puc Minas" />
+              <img src={logoPuc} alt={t("home.education.logoAlt")} />
             </div>
             <div className="education-about">
-              <h3>Bacharelado em Engenharia de Software</h3>
-              <h4>
-                Pontifícia Universidade Católica de Minas Gerais - Puc Minas
-              </h4>
+              <h3>{t("home.education.degree")}</h3>
+              <h4>{t("home.education.university")}</h4>
               <p>
-                <span>Fev 2026</span> -{" "}
+                <span>{t("home.education.start")}</span> -{" "}
                 <span>
-                  Dez 2029
+                  {t("home.education.end")}
                   <br />
                 </span>{" "}
-                <span style={{ fontSize: 10 }}>*Previsão</span>
+                <span style={{ fontSize: 10 }}>
+                  {t("home.education.expected")}
+                </span>
               </p>
             </div>
           </div>

@@ -1,0 +1,102 @@
+{
+  "meta": {
+    "title": "David Aurélio | Portfólio"
+  },
+  "common": {
+    "loading": "Carregando..."
+  },
+  "header": {
+    "navLabel": "Navegação principal",
+    "home": "Home",
+    "data": "Dados",
+    "resume": "Currículo",
+    "projects": "Projetos",
+    "contact": "Contato"
+  },
+  "switcher": {
+    "label": "Idioma",
+    "changeTo": "Mudar para {{language}}"
+  },
+  "home": {
+    "hero": {
+      "subtitle": "Estudante de Engenharia de Software na PUC Minas, atualmente no 2º período.",
+      "photoAlt": "Foto de David Aurélio Pedrosa",
+      "p1": "Desde pequeno, comecei a utilizar o computador do meu pai e, por conta disso, desenvolvi um grande interesse pela área de tecnologia. Em 2016, comecei a conhecer um pouco mais sobre desenvolvimento de jogos, tendo também meu primeiro contato com programação.",
+      "p2": "Em 2020, surgiu em mim a vontade de ingressar na área de programação. Por isso, iniciei o curso de Programação 1 na Escola CNI (Prime System), onde aprendi sobre Lógica de Programação, Java e um pouco de PHP. Gostei muito da experiência e, posteriormente, realizei o curso de Programação 2, com foco em HTML, CSS e WordPress.",
+      "p3": "Após esses cursos, surgiu o interesse em cursar uma faculdade na área de Tecnologia da Informação. Foi então que conheci o curso de Engenharia de Software da PUC Minas e iniciei minha graduação no primeiro semestre de 2026. Durante a graduação, venho adquirindo conhecimentos em Python, desenvolvimento web com HTML, CSS e JavaScript, Java, Spring Boot e metodologias ágeis, como Scrum."
+    },
+    "skills": {
+      "title": "Habilidades",
+      "languages": "Linguagens",
+      "frameworks": "Frameworks",
+      "python": {
+        "title": "Python",
+        "description": "Possuo conhecimento em Python, com lógica de programação."
+      },
+      "web": {
+        "title": "Desenvolvimento Web",
+        "description": "Possuo conhecimento em desenvolvimento web, com foco em HTML, CSS e JavaScript."
+      },
+      "java": {
+        "title": "Java",
+        "description": "Possuo conhecimento em Java, com foco em programação orientada a objetos."
+      },
+      "react": {
+        "title": "React",
+        "description": "Possuo conhecimento em React, com foco em desenvolvimento de aplicações web."
+      },
+      "spring": {
+        "title": "Spring Boot",
+        "description": "Possuo conhecimento em Spring Boot, com foco em desenvolvimento de APIs REST."
+      }
+    },
+    "education": {
+      "title": "EDUCAÇÃO",
+      "logoAlt": "Logo da PUC Minas",
+      "degree": "Bacharelado em Engenharia de Software",
+      "university": "Pontifícia Universidade Católica de Minas Gerais - PUC Minas",
+      "start": "Fev 2026",
+      "end": "Dez 2029",
+      "expected": "*Previsão"
+    }
+  },
+  "projects": {
+    "title": "Projetos",
+    "viewOnGithub": "Ver no GitHub",
+    "ecoflux": {
+      "description": "Plataforma web desenvolvida para facilitar o acesso à reciclagem e à coleta seletiva. O EcoFlux conecta cidadãos, pontos de coleta e empresas parceiras, permitindo consultar pontos de coleta, agendar a retirada de materiais recicláveis e acompanhar o calendário de coleta por região — tornando o processo mais simples e acessível no dia a dia."
+    },
+    "spaceEscape": {
+      "description": "Space Escape é um jogo 2D em que o jogador controla uma nave espacial e deve desviar dos meteoros que caem pela tela. Durante a partida, kits de reparo aparecem aleatoriamente e podem ser coletados para recuperar a vida da nave durante a partida. O objetivo é sobreviver pelo maior tempo possível e alcançar a maior pontuação."
+    }
+  },
+  "resume": {
+    "download": "Baixar currículo",
+    "frameTitle": "Currículo de David"
+  },
+  "data": {
+    "title": "Meus dados estatísticos no WakaTime e GitHub",
+    "note": "Alguns dados podem estar desatualizados, portanto disponibilizei o link do meu perfil do WakaTime e GitHub para que possa ver atualizado."
+  },
+  "contact": {
+    "title": "Entre em Contato",
+    "subtitle": "Sinta-se à vontade para se conectar ou me enviar uma mensagem.",
+    "responseTime": "Tempo médio de resposta de 1 até 2 dias úteis"
+  },
+  "wakatime": {
+    "title": "Linguagens mais usadas",
+    "since": "No WakaTime desde {{date}}",
+    "totalLabel": "horas totais",
+    "error": "Não foi possível carregar os dados do WakaTime agora.",
+    "moreLanguages": "+ {{count}} linguagens",
+    "profile": "Ver perfil no WakaTime"
+  },
+  "github": {
+    "error": "Não foi possível carregar os dados do GitHub agora.",
+    "avatarAlt": "Foto de {{name}}",
+    "repos": "repositórios",
+    "followers": "seguidores",
+    "stars": "estrelas",
+    "noDescription": "Sem descrição"
+  }
+}
