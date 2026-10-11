@@ -1,16 +1,17 @@
 .gh {
-  background: #161628;
-  border: 1px solid rgba(139, 92, 246, 0.35);
-  border-radius: 12px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--primary);
+  border-radius: var(--radius);
   padding: 24px;
   max-width: 760px;
   margin: 0 auto;
-  color: #e5e7eb;
+  color: var(--text);
 }
 
 .gh__msg {
   margin: 0;
-  color: #9ca3af;
+  color: var(--text-muted);
 }
 
 .gh__profile {
@@ -24,31 +25,33 @@
   width: 88px;
   height: 88px;
   border-radius: 50%;
-  border: 2px solid #8b5cf6;
+  border: 2px solid var(--primary);
+  box-shadow: var(--glow-primary);
 }
 
 .gh__name {
   margin: 0 0 4px;
   font-size: 1.3rem;
-  color: #e5e7eb;
+  color: var(--text);
 }
 
 .gh__user {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  color: #22d3ee;
+  color: var(--secondary);
   text-decoration: none;
   font-size: 0.9rem;
 }
 
 .gh__user:hover {
+  color: var(--primary);
   text-decoration: underline;
 }
 
 .gh__bio {
   margin: 8px 0 0;
-  color: #9ca3af;
+  color: var(--text-muted);
   font-size: 0.9rem;
 }
 
@@ -62,7 +65,8 @@
 }
 
 .gh__stats li {
-  background: #0b0b14;
+  background: var(--bg-deep);
+  border: 1px solid var(--line);
   border-radius: 8px;
   padding: 12px;
   text-align: center;
@@ -71,14 +75,15 @@
 .gh__stats strong {
   display: block;
   font-size: 1.4rem;
-  color: #8b5cf6;
+  color: var(--primary);
+  text-shadow: 0 0 10px rgba(var(--primary-rgb), 0.5);
 }
 
 .gh__stats span {
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #9ca3af;
+  color: var(--text-muted);
 }
 
 .gh__tags {
@@ -91,8 +96,8 @@
 }
 
 .gh__tags li {
-  border: 1px solid #22d3ee;
-  color: #22d3ee;
+  border: 1px solid var(--secondary);
+  color: var(--secondary);
   border-radius: 999px;
   padding: 2px 12px;
   font-size: 0.8rem;
@@ -114,41 +119,49 @@
   height: 100%;
   box-sizing: border-box;
   padding: 14px;
-  background: #0b0b14;
-  border: 1px solid transparent;
+  background: var(--bg-deep);
+  border: 1px solid var(--line);
   border-radius: 8px;
   text-decoration: none;
   color: inherit;
-  transition: border-color 0.2s;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .gh__repo:hover {
-  border-color: #8b5cf6;
+  border-color: var(--primary);
+  box-shadow: var(--glow-primary);
+  color: inherit;
 }
 
 .gh__repo-name {
   font-weight: 700;
-  color: #22d3ee;
+  color: var(--secondary);
   word-break: break-word;
 }
 
 .gh__repo-desc {
   flex: 1;
   font-size: 0.8rem;
-  color: #9ca3af;
+  color: var(--text-muted);
 }
 
 .gh__repo-meta {
   display: flex;
   gap: 12px;
   font-size: 0.75rem;
-  color: #9ca3af;
+  color: var(--text-muted);
 }
 
 .gh__repo-meta span {
   display: inline-flex;
   align-items: center;
   gap: 4px;
+}
+
+.gh__repo-meta svg {
+  color: var(--accent);
 }
 
 @media (max-width: 600px) {

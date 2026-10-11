@@ -9,5 +9,6 @@
 #projects h2 {
   font-size: 2.5rem;
   margin-bottom: 30px;
-  color: #ffffff;
+  color: var(--secondary);
+  text-shadow: 0 0 14px rgba(var(--secondary-rgb), 0.5);
 }

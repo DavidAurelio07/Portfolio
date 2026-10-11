@@ -1,4 +1,4 @@
 .skill-title {
-  color: white;
+  color: var(--text);
   margin-bottom: 10px;
 }

@@ -1,15 +1,14 @@
-.waka {
-  --text-soft: #e5e7eb;
-  --text-muted: #9ca3af;
-  --text-dim: #6b7280;
+/* As variáveis de cor (--text-muted, --bg-deep...) vêm do theme.css */
 
-  background: #161628;
-  border: 1px solid rgba(139, 92, 246, 0.35);
-  border-radius: 12px;
+.waka {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--secondary);
+  border-radius: var(--radius);
   padding: 24px;
   max-width: 760px;
   margin: 0 auto;
-  color: var(--text-soft);
+  color: var(--text);
 }
 
 .waka__header {
@@ -25,7 +24,8 @@
   font-size: 1.1rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #22d3ee;
+  color: var(--secondary);
+  text-shadow: 0 0 12px rgba(var(--secondary-rgb), 0.5);
 }
 
 .waka__since {
@@ -43,7 +43,8 @@
 .waka__total {
   font-size: 1.6rem;
   font-weight: 700;
-  color: #8b5cf6;
+  color: var(--primary);
+  text-shadow: 0 0 12px rgba(var(--primary-rgb), 0.55);
   line-height: 1.1;
 }
 
@@ -90,7 +91,8 @@
 .waka__bar {
   height: 10px;
   border-radius: 999px;
-  background: #0b0b14;
+  background: var(--bg-deep);
+  border: 1px solid var(--line);
   overflow: hidden;
 }
 
@@ -111,12 +113,13 @@
 .waka__link {
   display: inline-block;
   margin-top: 20px;
-  color: #22d3ee;
+  color: var(--secondary);
   font-size: 0.85rem;
   text-decoration: none;
 }
 
 .waka__link:hover {
+  color: var(--primary);
   text-decoration: underline;
 }
 

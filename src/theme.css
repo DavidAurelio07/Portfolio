@@ -1,0 +1,103 @@
+:root {
+  /* Fundos */
+  --bg: #0d0221;
+  --bg-deep: #080118; /* áreas "afundadas": trilhas de barra, caixas internas */
+  --surface: #1a1033; /* cards */
+  --surface-hover: #241548;
+  --line: #3a2266; /* bordas neutras */
+
+  /* Neon */
+  --primary: #ff2e97; /* rosa: destaque principal */
+  --secondary: #00f0ff; /* ciano: títulos, links */
+  --accent: #f9f002; /* amarelo: use raramente (estrelas, detalhes) */
+
+  /* Texto */
+  --text: #f1e9ff;
+  --text-soft: #d9ccf5;
+  --text-muted: #b8a9d9;
+  --text-dim: #9a8cc4;
+
+  /* Mesmas cores em RGB, para fazer brilhos com transparência */
+  --primary-rgb: 255, 46, 151;
+  --secondary-rgb: 0, 240, 255;
+
+  --glow-primary: 0 0 16px rgba(var(--primary-rgb), 0.45);
+  --glow-secondary: 0 0 16px rgba(var(--secondary-rgb), 0.4);
+
+  --radius: 10px;
+}
+
+body {
+  background:
+    radial-gradient(
+      circle at 15% 0%,
+      rgba(var(--primary-rgb), 0.14),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 90% 8%,
+      rgba(var(--secondary-rgb), 0.1),
+      transparent 40%
+    ),
+    var(--bg);
+  background-attachment: fixed;
+  color: var(--text);
+}
+
+a {
+  color: var(--secondary);
+}
+
+a:hover {
+  color: var(--primary);
+}
+
+::selection {
+  background: var(--primary);
+  color: var(--bg);
+}
+
+:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 2px;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) var(--bg-deep);
+}
+
+/* Página do currículo (o Resume.jsx não tem CSS próprio) */
+#resume > div {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 16px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  box-sizing: border-box;
+}
+
+#resume > div > a {
+  padding: 8px 18px;
+  border: 1px solid var(--secondary);
+  border-radius: 6px;
+  text-decoration: none;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+#resume > div > a:hover {
+  background: var(--secondary);
+  color: var(--bg);
+  box-shadow: var(--glow-secondary);
+}
+
+#resume iframe {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--glow-primary);
+}

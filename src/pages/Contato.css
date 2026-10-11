@@ -1,15 +1,16 @@
 .contato-container {
-  color: #e2e8f0;
+  color: var(--text);
 }
 
 .contato-titulo {
-  color: #22d3ee;
+  color: var(--secondary);
   font-size: 1.8rem;
   margin-bottom: 0.5rem;
+  text-shadow: 0 0 12px rgba(var(--secondary-rgb), 0.5);
 }
 
 .contato-subtitulo {
-  color: #a0aec0;
+  color: var(--text-muted);
   margin-top: 0;
   margin-bottom: 2.5rem;
 }
@@ -24,16 +25,25 @@
   display: inline-flex;
   align-items: center;
   gap: 1rem;
-  color: #cbd5e0;
+  color: var(--text-soft);
   text-decoration: none;
   font-size: 1.1rem;
-  transition: color 0.3s ease;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
 }
 
 .contato-item:hover {
-  color: #22d3ee; /* Efeito hover com a cor tema */
+  color: var(--primary);
+  transform: translateX(6px);
 }
 
 .contato-icone {
   font-size: 1.8rem; /* Tamanho dos ícones */
+  color: var(--secondary);
+}
+
+.contato-item:hover .contato-icone {
+  color: var(--primary);
+  filter: drop-shadow(0 0 8px rgba(var(--primary-rgb), 0.7));
 }

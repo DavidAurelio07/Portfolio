@@ -13,9 +13,17 @@
   align-items: center;
 }
 
-.hero-section h2,
+/* Nome com degradê neon rosa → ciano */
+.hero-section h2 {
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 12px rgba(var(--primary-rgb), 0.35));
+}
+
 p {
-  color: white;
+  color: var(--text);
 }
 
 .sobre-hero {
@@ -24,6 +32,10 @@ p {
 
 .sobre-hero img {
   border-radius: 80%;
+  border: 3px solid var(--primary);
+  box-shadow:
+    0 0 24px rgba(var(--primary-rgb), 0.5),
+    0 0 48px rgba(var(--secondary-rgb), 0.2);
 }
 
 .skills-section {
@@ -36,13 +48,15 @@ p {
   align-items: center;
 }
 
-.skills-section h2 {
-  color: #ffffff;
+.skills-section h2,
+.section-education h2 {
+  color: var(--secondary);
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 30px;
   text-transform: uppercase;
   letter-spacing: 1.5px;
+  text-shadow: 0 0 14px rgba(var(--secondary-rgb), 0.5);
 }
 
 .skills-container {
@@ -62,10 +76,11 @@ p {
   align-items: center;
   justify-content: center;
   gap: 16px;
-  background-color: #161628;
-  border: 1px solid #2a2a48;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  background-color: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--primary);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
   transition:
     transform 0.3s ease,
     background-color 0.3s ease,
@@ -75,32 +90,27 @@ p {
 }
 
 .skills-cards h3 {
-  color: #ffffff;
+  color: var(--text);
   font-size: 1.25rem;
   font-weight: 600;
   margin: 0;
 }
 
 .skills-cards:hover {
-  background-color: #1e1e38;
-  border-color: #4f46e5;
+  background-color: var(--surface-hover);
+  border-color: var(--primary);
   transform: translateY(-5px);
-  box-shadow: 0 8px 30px rgba(79, 70, 229, 0.2);
+  box-shadow: var(--glow-primary);
 }
 
 .section-education {
   display: flex;
-  color: white;
+  color: var(--text);
   width: 100%;
   max-width: 1200px;
   flex-direction: column;
   align-items: center;
   margin: 10% auto 0;
-}
-
-.section-education h2 {
-  font-size: 2rem;
-  font-weight: 700;
 }
 
 .section-education img {
@@ -115,4 +125,9 @@ p {
 .education-about h3 {
   font-weight: bold;
   font-size: 1.25rem;
+  color: var(--text);
+}
+
+.education-about h4 {
+  color: var(--text-muted);
 }

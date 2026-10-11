@@ -1,16 +1,20 @@
 #dados {
   display: flex;
   flex-direction: column;
+  padding: 0 16px 40px;
 }
 
 #dados h2 {
-  color: white;
+  color: var(--secondary);
+  text-shadow: 0 0 12px rgba(var(--secondary-rgb), 0.45);
 }
 
 .dados-section {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   margin: auto;
-  gap: 150px;
+  gap: 48px;
 }
 
 .dados-waka {
