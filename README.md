@@ -2,7 +2,7 @@
 
 Portfólio pessoal em estilo **gamer / cyberpunk (Synthwave)**, feito para apresentar meus projetos, minha formação e minhas estatísticas de código em tempo real.
 
-🔗 **Acesse:** [davidaurelio-portfolio.vercel.app](https://davidaurelio-portfolio.vercel.app)
+🔗 **Acesse:** [davidaurelio-portfolio.vercel.app](https://www.dvdaurelio.dev)
 
 ![Print do Site](image.png)
 
