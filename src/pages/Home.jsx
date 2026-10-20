@@ -1,43 +1,12 @@
 import { useTranslation } from "react-i18next";
 import "./Home.css";
-import Skills from "../components/Skills.jsx";
+import SkillsSection from "../components/SkillsSection/SkillsSection.jsx";
+import SKILLS, { CATEGORIES } from "../data/skills";
 import fotoDavid from "../assets/imagens/davidfoto.jpg";
 import logoPuc from "../assets/imagens/logoPuc.png";
 
 function Home() {
   const { t } = useTranslation();
-
-  // Montadas a cada render para acompanhar o idioma escolhido
-  const skillLanguages = [
-    {
-      id: 1,
-      title: t("home.skills.python.title"),
-      description: t("home.skills.python.description"),
-    },
-    {
-      id: 2,
-      title: t("home.skills.web.title"),
-      description: t("home.skills.web.description"),
-    },
-    {
-      id: 3,
-      title: t("home.skills.java.title"),
-      description: t("home.skills.java.description"),
-    },
-  ];
-
-  const skillFrameworks = [
-    {
-      id: 1,
-      title: t("home.skills.react.title"),
-      description: t("home.skills.react.description"),
-    },
-    {
-      id: 2,
-      title: t("home.skills.spring.title"),
-      description: t("home.skills.spring.description"),
-    },
-  ];
 
   return (
     <section id="home">
@@ -55,17 +24,7 @@ function Home() {
 
         <div className="skills-section">
           <h2>{t("home.skills.title")}</h2>
-          <div className="skills-container">
-            <div className="skills-cards">
-              <h3>{t("home.skills.languages")}</h3>
-              <Skills skills={skillLanguages} />
-            </div>
-
-            <div className="skills-cards">
-              <h3>{t("home.skills.frameworks")}</h3>
-              <Skills skills={skillFrameworks} />
-            </div>
-          </div>
+          <SkillsSection skills={SKILLS} categories={CATEGORIES} />
         </div>
 
         <div className="section-education">
