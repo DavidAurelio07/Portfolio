@@ -1,0 +1,341 @@
+/* =========================================================
+   VISUALIZADOR DE CURRÍCULO (PDF) — tema Synthwave
+   As cores vêm do theme.css (--surface, --primary, --secondary...)
+   ========================================================= */
+
+.cv-viewer {
+  --cv-text: var(--text);
+  --cv-muted: var(--text-muted);
+  --cv-border: var(--line);
+
+  overflow: hidden;
+
+  color: var(--cv-text);
+
+  background: var(--surface);
+
+  border: 1px solid var(--cv-border);
+  border-top: 2px solid var(--primary);
+  border-radius: 16px;
+
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+.cv-sr {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+
+  overflow: hidden;
+
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* =========================================================
+   BARRA DE FERRAMENTAS
+   ========================================================= */
+
+.cv-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem 1rem;
+
+  padding: 0.85rem 1rem;
+
+  background: rgba(26, 16, 51, 0.92); /* --surface com transparência */
+
+  border-bottom: 1px solid var(--cv-border);
+
+  backdrop-filter: blur(6px);
+}
+
+.cv-toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.cv-langs,
+.cv-zoom {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+
+  padding: 4px;
+
+  background: var(--bg-deep);
+
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.cv-langs button,
+.cv-zoom button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 32px;
+  min-width: 32px;
+
+  padding: 0 0.75rem;
+
+  color: var(--cv-muted);
+
+  background: transparent;
+
+  border: none;
+  border-radius: 8px;
+
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.cv-zoom button {
+  padding: 0;
+
+  font-size: 1rem;
+}
+
+.cv-langs button:hover,
+.cv-zoom button:hover:not(:disabled) {
+  color: var(--secondary);
+
+  background: var(--surface-hover);
+}
+
+.cv-langs button.active {
+  color: var(--bg);
+
+  background: var(--primary);
+
+  box-shadow: var(--glow-primary);
+}
+
+.cv-zoom button:disabled {
+  opacity: 0.35;
+
+  cursor: default;
+}
+
+.cv-zoom-value {
+  min-width: 48px;
+
+  color: var(--secondary);
+
+  font-size: 0.82rem;
+  font-weight: 600;
+
+  text-align: center;
+}
+
+.cv-pages {
+  color: var(--cv-muted);
+
+  font-size: 0.82rem;
+}
+
+.cv-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.cv-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+
+  height: 40px;
+
+  padding: 0 1rem;
+
+  color: var(--secondary);
+
+  background: transparent;
+
+  border: 1px solid var(--secondary);
+  border-radius: 8px;
+
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 500;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.2s ease;
+}
+
+.cv-button:hover {
+  color: var(--bg);
+
+  background: var(--secondary);
+
+  box-shadow: var(--glow-secondary);
+
+  transform: translateY(-1px);
+}
+
+.cv-button.primary {
+  color: var(--bg);
+
+  background: var(--primary);
+
+  border-color: var(--primary);
+
+  box-shadow: var(--glow-primary);
+}
+
+.cv-button.primary:hover {
+  color: var(--bg);
+
+  background: var(--primary);
+
+  box-shadow: 0 0 24px rgba(var(--primary-rgb), 0.65);
+}
+
+/* =========================================================
+   ÁREA DAS PÁGINAS
+   ========================================================= */
+
+.cv-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  min-height: 360px;
+  max-height: 900px;
+
+  padding: 1.5rem;
+
+  overflow: auto;
+
+  background:
+    radial-gradient(
+      circle at 10% 0%,
+      rgba(var(--primary-rgb), 0.1),
+      transparent 40%
+    ),
+    var(--bg-deep);
+}
+
+/* Com zoom maior que 100%, a página fica mais larga que a área: rolagem horizontal */
+.cv-area .react-pdf__Document {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+
+  min-width: min-content;
+}
+
+/* A página do PDF continua branca (é o papel do currículo);
+   só ganha um brilho neon em volta. */
+.cv-page {
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border-radius: 4px;
+
+  box-shadow:
+    0 0 0 1px var(--line),
+    0 0 24px rgba(var(--primary-rgb), 0.25),
+    0 16px 40px -16px rgba(0, 0, 0, 0.8);
+}
+
+.cv-status {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+
+  margin: auto;
+
+  color: var(--cv-muted);
+
+  font-size: 0.9rem;
+
+  text-align: center;
+}
+
+.cv-error {
+  max-width: 420px;
+
+  color: var(--primary);
+}
+
+.cv-spinner {
+  width: 18px;
+  height: 18px;
+
+  border: 2px solid var(--cv-border);
+  border-top-color: var(--secondary);
+  border-radius: 50%;
+
+  animation: cv-spin 0.8s linear infinite;
+}
+
+@keyframes cv-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 640px) {
+  .cv-toolbar {
+    justify-content: center;
+  }
+
+  .cv-actions {
+    width: 100%;
+  }
+
+  .cv-button {
+    flex: 1;
+
+    justify-content: center;
+  }
+
+  .cv-area {
+    max-height: 640px;
+
+    padding: 0.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cv-spinner {
+    animation-duration: 2s;
+  }
+
+  .cv-button,
+  .cv-langs button,
+  .cv-zoom button {
+    transition: none;
+  }
+}

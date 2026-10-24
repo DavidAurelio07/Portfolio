@@ -66,38 +66,3 @@ a:hover {
   scrollbar-width: thin;
   scrollbar-color: var(--primary) var(--bg-deep);
 }
-
-/* Página do currículo (o Resume.jsx não tem CSS próprio) */
-#resume > div {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 16px 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 16px;
-  box-sizing: border-box;
-}
-
-#resume > div > a {
-  padding: 8px 18px;
-  border: 1px solid var(--secondary);
-  border-radius: 6px;
-  text-decoration: none;
-  transition:
-    background 0.2s ease,
-    color 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-#resume > div > a:hover {
-  background: var(--secondary);
-  color: var(--bg);
-  box-shadow: var(--glow-secondary);
-}
-
-#resume iframe {
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  box-shadow: var(--glow-primary);
-}
