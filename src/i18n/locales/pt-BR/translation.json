@@ -23,7 +23,18 @@
       "photoAlt": "Foto de David Aurélio Pedrosa",
       "p1": "Desde pequeno, comecei a utilizar o computador do meu pai e, por conta disso, desenvolvi um grande interesse pela área de tecnologia. Em 2016, comecei a conhecer um pouco mais sobre desenvolvimento de jogos, tendo também meu primeiro contato com programação.",
       "p2": "Em 2020, surgiu em mim a vontade de ingressar na área de programação. Por isso, iniciei o curso de Programação 1 na Escola CNI (Prime System), onde aprendi sobre Lógica de Programação, Java e um pouco de PHP. Gostei muito da experiência e, posteriormente, realizei o curso de Programação 2, com foco em HTML, CSS e WordPress.",
-      "p3": "Após esses cursos, surgiu o interesse em cursar uma faculdade na área de Tecnologia da Informação. Foi então que conheci o curso de Engenharia de Software da PUC Minas e iniciei minha graduação no primeiro semestre de 2026. Durante a graduação, venho adquirindo conhecimentos em Python, desenvolvimento web com HTML, CSS e JavaScript, Java, Spring Boot e metodologias ágeis, como Scrum."
+      "p3": "Após esses cursos, surgiu o interesse em cursar uma faculdade na área de Tecnologia da Informação. Foi então que conheci o curso de Engenharia de Software da PUC Minas e iniciei minha graduação no primeiro semestre de 2026. Durante a graduação, venho adquirindo conhecimentos em Python, desenvolvimento web com HTML, CSS e JavaScript, Java, Spring Boot e metodologias ágeis, como Scrum.",
+      "greeting": "Olá, eu sou",
+      "roles": [
+        "Desenvolvedor Web",
+        "Estudante de Engenharia de Software",
+        "Entusiasta de Java e Python"
+      ],
+      "tagline": "Busco meu primeiro estágio para colocar em prática o que aprendo e evoluir construindo projetos reais.",
+      "ctaProjects": "Ver projetos",
+      "ctaResume": "Ver currículo",
+      "github": "GitHub",
+      "available": "Disponível para estágio"
     },
     "skills": {
       "title": "Habilidades",
@@ -57,7 +68,45 @@
       "university": "Pontifícia Universidade Católica de Minas Gerais - PUC Minas",
       "start": "Fev 2026",
       "end": "Dez 2029",
-      "expected": "*Previsão"
+      "expected": "*Previsão",
+      "status": "Em andamento"
+    },
+    "stats": {
+      "period": {
+        "value": "2º",
+        "label": "Período em Eng. de Software"
+      },
+      "skills": {
+        "label": "Tecnologias"
+      },
+      "projects": {
+        "label": "Projetos"
+      },
+      "since": {
+        "value": "2026",
+        "label": "Início da graduação"
+      }
+    },
+    "about": {
+      "title": "Minha história",
+      "items": [
+        {
+          "year": "2016",
+          "title": "Primeiro contato"
+        },
+        {
+          "year": "2020",
+          "title": "Cursos de programação"
+        },
+        {
+          "year": "2026",
+          "title": "PUC Minas"
+        }
+      ]
+    },
+    "featured": {
+      "title": "Projetos em destaque",
+      "viewAll": "Ver todos os projetos"
     }
   },
   "projects": {

@@ -23,7 +23,18 @@
       "photoAlt": "Photo of David Aurélio Pedrosa",
       "p1": "Since I was a kid, I started using my father's computer, and that sparked a strong interest in technology. In 2016, I learned a bit more about game development and had my first contact with programming.",
       "p2": "In 2020, I felt the desire to get into programming. So I started the Programming 1 course at Escola CNI (Prime System), where I learned Programming Logic, Java and a bit of PHP. I really enjoyed it and later took Programming 2, focused on HTML, CSS and WordPress.",
-      "p3": "After those courses, I became interested in studying Information Technology at university. That's when I found the Software Engineering program at PUC Minas, and I started my degree in the first semester of 2026. During the program, I have been learning Python, web development with HTML, CSS and JavaScript, Java, Spring Boot and agile methodologies such as Scrum."
+      "p3": "After those courses, I became interested in studying Information Technology at university. That's when I found the Software Engineering program at PUC Minas, and I started my degree in the first semester of 2026. During the program, I have been learning Python, web development with HTML, CSS and JavaScript, Java, Spring Boot and agile methodologies such as Scrum.",
+      "greeting": "Hi, I'm",
+      "roles": [
+        "Web Developer",
+        "Software Engineering Student",
+        "Java and Python Enthusiast"
+      ],
+      "tagline": "I'm looking for my first internship to put what I learn into practice and grow by building real projects.",
+      "ctaProjects": "View projects",
+      "ctaResume": "View resume",
+      "github": "GitHub",
+      "available": "Open to internships"
     },
     "skills": {
       "title": "Skills",
@@ -57,7 +68,45 @@
       "university": "Pontifical Catholic University of Minas Gerais - PUC Minas",
       "start": "Feb 2026",
       "end": "Dec 2029",
-      "expected": "*Expected"
+      "expected": "*Expected",
+      "status": "In progress"
+    },
+    "stats": {
+      "period": {
+        "value": "2nd",
+        "label": "Semester in Software Eng."
+      },
+      "skills": {
+        "label": "Technologies"
+      },
+      "projects": {
+        "label": "Projects"
+      },
+      "since": {
+        "value": "2026",
+        "label": "Started college"
+      }
+    },
+    "about": {
+      "title": "My story",
+      "items": [
+        {
+          "year": "2016",
+          "title": "First contact"
+        },
+        {
+          "year": "2020",
+          "title": "Programming courses"
+        },
+        {
+          "year": "2026",
+          "title": "PUC Minas"
+        }
+      ]
+    },
+    "featured": {
+      "title": "Featured projects",
+      "viewAll": "View all projects"
     }
   },
   "projects": {

@@ -21,6 +21,575 @@
   -webkit-text-fill-color: transparent;
   filter: drop-shadow(0 0 12px rgba(var(--primary-rgb), 0.35));
 }
+/* =========================================================
+   HOME — tema Synthwave (cores vêm do theme.css)
+   ========================================================= */
+
+#home {
+  width: 100%;
+  padding-bottom: 80px;
+  overflow-x: hidden;
+}
+
+#home p {
+  color: var(--text);
+}
+
+/* ---------- Aparecer ao rolar (componente Reveal) ---------- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------- Botões ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 24px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn--primary,
+.btn--primary:hover {
+  color: var(--bg);
+  background: var(--primary);
+  border-color: var(--primary);
+  box-shadow: var(--glow-primary);
+}
+
+.btn--primary:hover {
+  box-shadow: 0 0 26px rgba(var(--primary-rgb), 0.7);
+}
+
+.btn--secondary {
+  color: var(--secondary);
+  background: transparent;
+  border-color: var(--secondary);
+}
+
+.btn--secondary:hover {
+  color: var(--bg);
+  background: var(--secondary);
+  box-shadow: var(--glow-secondary);
+}
+
+.btn--icon {
+  width: 44px;
+  padding: 0;
+  font-size: 1.3rem;
+  color: var(--text);
+  background: var(--surface);
+  border-color: var(--line);
+}
+
+.btn--icon:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+  box-shadow: var(--glow-primary);
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  position: relative;
+  padding: 64px 20px 56px;
+}
+
+/* Grade neon no fundo, esmaecendo para baixo */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(var(--secondary-rgb), 0.08) 1px, transparent 1px),
+    linear-gradient(
+      90deg,
+      rgba(var(--secondary-rgb), 0.08) 1px,
+      transparent 1px
+    );
+  background-size: 48px 48px;
+  mask-image: linear-gradient(to bottom, #000 20%, transparent 95%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 20%, transparent 95%);
+  pointer-events: none;
+}
+
+.hero__inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 56px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.hero__photo {
+  position: relative;
+  width: 280px;
+  height: 280px;
+}
+
+/* Anel neon girando em volta da foto */
+.hero__photo::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    var(--primary),
+    var(--secondary),
+    var(--primary)
+  );
+  filter: blur(10px);
+  opacity: 0.7;
+  animation: hero-spin 8s linear infinite;
+}
+
+.hero__photo img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--bg);
+  box-shadow: 0 0 0 2px var(--primary);
+}
+
+@keyframes hero-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  margin-bottom: 18px;
+  color: var(--secondary);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 0.78rem;
+}
+
+.hero__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #3dff9a;
+  box-shadow: 0 0 8px #3dff9a;
+  animation: hero-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes hero-pulse {
+  50% {
+    opacity: 0.35;
+  }
+}
+
+.hero__greeting {
+  margin: 0;
+  color: var(--text-muted) !important;
+  font-size: 1rem;
+}
+
+.hero__text h1 {
+  margin: 4px 0 10px;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.1;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 12px rgba(var(--primary-rgb), 0.35));
+}
+
+.hero__role {
+  min-height: 1.8em;
+  margin: 0 0 14px;
+  color: var(--secondary) !important;
+  font-size: clamp(1.05rem, 2.4vw, 1.4rem);
+  font-weight: 600;
+  text-shadow: 0 0 14px rgba(var(--secondary-rgb), 0.5);
+}
+
+.typewriter__cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  margin-left: 3px;
+  vertical-align: text-bottom;
+  background: var(--secondary);
+  animation: hero-blink 1s steps(1) infinite;
+}
+
+@keyframes hero-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.hero__subtitle {
+  margin: 0 0 8px;
+  color: var(--text-soft) !important;
+}
+
+.hero__tagline {
+  max-width: 560px;
+  margin: 0 0 26px;
+  color: var(--text-muted) !important;
+  line-height: 1.6;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* ---------- Números ---------- */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.stats__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 22px 12px;
+  text-align: center;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--primary);
+  border-radius: var(--radius);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.stats__item:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary);
+  box-shadow: var(--glow-primary);
+}
+
+.stats__item strong {
+  color: var(--secondary);
+  font-size: 2rem;
+  text-shadow: 0 0 14px rgba(var(--secondary-rgb), 0.5);
+}
+
+.stats__item span {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+/* ---------- Seções ---------- */
+
+.home-section {
+  width: 100%;
+  max-width: 1100px;
+  margin: 96px auto 0;
+  padding: 0 20px;
+}
+
+.section-title,
+.skills-section h2 {
+  position: relative;
+  margin: 0 0 40px;
+  padding-bottom: 14px;
+  text-align: center;
+  color: var(--secondary);
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-shadow: 0 0 14px rgba(var(--secondary-rgb), 0.5);
+}
+
+/* Barrinha rosa embaixo do título */
+.section-title::after,
+.skills-section h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 64px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--primary);
+  box-shadow: var(--glow-primary);
+  transform: translateX(-50%);
+}
+
+.home-section__more {
+  display: flex;
+  justify-content: center;
+  margin-top: 36px;
+}
+
+/* ---------- Linha do tempo ---------- */
+
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 0 0 28px;
+  list-style: none;
+}
+
+/* Linha vertical */
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 7px;
+  width: 2px;
+  background: linear-gradient(var(--primary), var(--secondary));
+  opacity: 0.6;
+}
+
+.timeline__item {
+  position: relative;
+  margin-bottom: 28px;
+}
+
+.timeline__item:last-child {
+  margin-bottom: 0;
+}
+
+/* Bolinha na linha */
+.timeline__item::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: -28px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--primary);
+  box-shadow: var(--glow-primary);
+}
+
+.timeline__year {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: var(--primary);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.timeline__card {
+  padding: 20px 22px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.timeline__card:hover {
+  border-color: var(--primary);
+  box-shadow: var(--glow-primary);
+}
+
+.timeline__card h3 {
+  margin: 0 0 8px;
+  color: var(--text);
+  font-size: 1.1rem;
+}
+
+.timeline__card p {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.7;
+  font-size: 0.92rem;
+}
+
+/* ---------- Habilidades ---------- */
+
+.skills-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 96px auto 0;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+/* ---------- Educação ---------- */
+
+.education-card {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 28px;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--primary);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+.education-card img {
+  flex-shrink: 0;
+  width: 130px;
+  height: auto;
+}
+
+.education-about {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.education-badge {
+  padding: 3px 12px;
+  color: var(--bg);
+  background: var(--secondary);
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  box-shadow: var(--glow-secondary);
+}
+
+.education-about h3 {
+  margin: 6px 0 0;
+  color: var(--text);
+  font-size: 1.25rem;
+}
+
+.education-about h4 {
+  margin: 0;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.education-about p {
+  margin: 4px 0 0;
+  color: var(--text-soft);
+}
+
+.education-about small {
+  color: var(--text-dim);
+}
+
+/* ---------- Celular / tablet ---------- */
+
+@media (max-width: 800px) {
+  .hero__inner {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 36px;
+    text-align: center;
+  }
+
+  .hero__photo {
+    width: 220px;
+    height: 220px;
+  }
+
+  .hero__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero__actions {
+    justify-content: center;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .home-section,
+  .skills-section {
+    margin-top: 72px;
+  }
+
+  .education-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .education-about {
+    align-items: center;
+  }
+}
+
+/* ---------- Quem prefere menos movimento ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .hero__photo::before,
+  .hero__dot,
+  .typewriter__cursor {
+    animation: none;
+  }
+
+  .btn,
+  .stats__item {
+    transition: none;
+  }
+}
+
+/* Na Home, os cards de projeto dividem a largura (2 cards = 2 colunas iguais) */
+.home-section .projects-grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
 
 p {
   color: var(--text);
