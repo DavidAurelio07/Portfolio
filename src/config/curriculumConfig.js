@@ -6,7 +6,7 @@ const CURRICULUM_CONFIG = {
     {
       id: "pt",
       label: "Português",
-      file: "../../public/curriculo/Curriculo-BR.pdf",
+      file: "/curriculo/Curriculo-BR.pdf",
       // Nome do arquivo quando o visitante clicar em "Baixar"
       downloadName: "Curriculo-David-Aurelio.pdf",
     },
