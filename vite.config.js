@@ -3,7 +3,7 @@ import tls from "node:tls";
 import react from "@vitejs/plugin-react";
 import { defineConfig, loadEnv } from "vite";
 
-import { handleWakaTime } from "./src/api/_wakatime.js";
+import { handleWakaTime } from "./api/_wakatime.js";
 
 // Antivírus/proxy (Avast, Kaspersky, Zscaler...) que inspecionam HTTPS
 // reassinam os certificados com uma CA raiz própria. O Windows confia nela,
@@ -32,7 +32,7 @@ function wakatimeApi(env) {
     name: "wakatime-api",
     async configResolved() {
       try {
-        ({ handleCodando } = await import("./src/api/_codando.js"));
+        ({ handleCodando } = await import("./api/_codando.js"));
       } catch {
         handleCodando = null; // sem o arquivo, a rota responde 503 e o cartão some
       }

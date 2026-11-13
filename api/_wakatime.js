@@ -17,7 +17,7 @@
 //
 // O nome do arquivo começa com "_" para a Vercel NÃO transformá-lo em rota.
 
-import WAKATIME_CONFIG from "../config/wakaTimeConfig.js";
+import WAKATIME_CONFIG from "../src/config/wakaTimeConfig.js";
 import { fetchWakaTime, hasAccessToken } from "./_oauth.js";
 
 const { MAX_LIBRARIES = 10, HIDDEN_DEPENDENCIES = [] } = WAKATIME_CONFIG;
