@@ -7,7 +7,7 @@ import {
   FiSun,
   FiCode,
 } from "react-icons/fi";
-import WAKATIME_CONFIG from "../../config/wakatimeConfig";
+import WAKATIME_CONFIG from "../../config/wakaTimeConfig";
 import { fetchWakaTimeStats } from "../../services/wakatimeService";
 import {
   formatDate,

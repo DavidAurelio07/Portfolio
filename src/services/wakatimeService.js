@@ -1,4 +1,4 @@
-import WAKATIME_CONFIG from "../config/wakatimeConfig";
+import WAKATIME_CONFIG from "../config/wakaTimeConfig";
 
 // Erro com o código que o servidor mandou (ver api/_wakatime.js):
 //   missing_config | invalid_token | forbidden | not_found | pending | timeout ...

@@ -1,4 +1,4 @@
-// wakatimeConfig.js
+// wakaTimeConfig.js
 // Configurações do componente <WakaTimeStats />.
 //
 // O token do WakaTime NÃO fica aqui: ele é lido só no servidor (WAKATIME_ACCESS_TOKEN,
