@@ -139,7 +139,24 @@
   "contact": {
     "title": "Get in Touch",
     "subtitle": "Feel free to connect or send me a message.",
-    "responseTime": "Average response time of 1 to 2 business days"
+    "responseTime": "Average response time of 1 to 2 business days",
+    "channels": "Channels",
+    "form": {
+      "title": "Send a message",
+      "name": "Name",
+      "namePlaceholder": "What should I call you?",
+      "email": "Email",
+      "emailPlaceholder": "you@email.com",
+      "message": "Message",
+      "messagePlaceholder": "Write your message...",
+      "submit": "Send message",
+      "sending": "Sending...",
+      "success": "Message sent! I'll get back to you soon.",
+      "error": "Couldn't send right now. Try again or use the email above.",
+      "errorRequired": "Please fill in all fields.",
+      "errorEmail": "Enter a valid email.",
+      "notConfigured": "The form isn't configured yet. Please use the email above for now."
+    }
   },
   "wakatime": {
     "title": "Most used languages",

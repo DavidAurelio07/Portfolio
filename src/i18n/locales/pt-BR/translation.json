@@ -139,7 +139,24 @@
   "contact": {
     "title": "Entre em Contato",
     "subtitle": "Sinta-se à vontade para se conectar ou me enviar uma mensagem.",
-    "responseTime": "Tempo médio de resposta de 1 até 2 dias úteis"
+    "responseTime": "Tempo médio de resposta de 1 até 2 dias úteis",
+    "channels": "Canais",
+    "form": {
+      "title": "Envie uma mensagem",
+      "name": "Nome",
+      "namePlaceholder": "Como posso te chamar?",
+      "email": "E-mail",
+      "emailPlaceholder": "seu@email.com",
+      "message": "Mensagem",
+      "messagePlaceholder": "Escreva sua mensagem...",
+      "submit": "Enviar mensagem",
+      "sending": "Enviando...",
+      "success": "Mensagem enviada! Retorno em breve.",
+      "error": "Não foi possível enviar agora. Tente novamente ou use o e-mail acima.",
+      "errorRequired": "Preencha todos os campos.",
+      "errorEmail": "Digite um e-mail válido.",
+      "notConfigured": "O formulário ainda não está configurado. Use o e-mail acima por enquanto."
+    }
   },
   "wakatime": {
     "title": "Linguagens mais usadas",
