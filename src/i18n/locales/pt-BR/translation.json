@@ -125,7 +125,16 @@
   },
   "data": {
     "title": "Meus dados estatísticos no WakaTime e GitHub",
-    "note": "Alguns dados podem estar desatualizados, portanto disponibilizei o link do meu perfil do WakaTime e GitHub para que possa ver atualizado."
+    "note": "Alguns dados podem estar desatualizados, portanto disponibilizei o link do meu perfil do WakaTime e GitHub para que possa ver atualizado.",
+    "badge": "Dados em tempo real",
+    "wakatime": {
+      "title": "WakaTime",
+      "subtitle": "Tempo de programação medido direto do meu editor."
+    },
+    "github": {
+      "title": "GitHub",
+      "subtitle": "Repositórios, linguagens e atividade recente."
+    }
   },
   "contact": {
     "title": "Entre em Contato",

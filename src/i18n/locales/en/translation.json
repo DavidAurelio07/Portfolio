@@ -125,7 +125,16 @@
   },
   "data": {
     "title": "My WakaTime and GitHub statistics",
-    "note": "Some data may be out of date, so I've shared the links to my WakaTime and GitHub profiles so you can see the latest."
+    "note": "Some data may be out of date, so I've shared the links to my WakaTime and GitHub profiles so you can see the latest.",
+    "badge": "Live data",
+    "wakatime": {
+      "title": "WakaTime",
+      "subtitle": "Coding time measured straight from my editor."
+    },
+    "github": {
+      "title": "GitHub",
+      "subtitle": "Repositories, languages and recent activity."
+    }
   },
   "contact": {
     "title": "Get in Touch",
