@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import WakaTime from "../components/WakaTime";
+import WakaTimeStats from "../components/WakaTimeStats/WakaTimeStats";
 import GitHubStats from "../components/GitHubStats";
 import "./Dados.css";
 
@@ -13,7 +13,7 @@ function Dados() {
       <div className="dados-section">
         <div className="dados-waka">
           <h2>WakaTime</h2>
-          <WakaTime />
+          <WakaTimeStats initialRange="last_7_days" showProjects />
         </div>
 
         <div className="dados-git">
