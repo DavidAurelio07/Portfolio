@@ -111,7 +111,10 @@
   },
   "projects": {
     "title": "Projects",
+    "subtitle": "Click a project to see more details.",
     "viewOnGithub": "View on GitHub",
+    "openDetails": "View details",
+    "close": "Close",
     "ecoflux": {
       "description": "Web platform built to make recycling and selective waste collection more accessible. EcoFlux connects citizens, collection points and partner companies, letting users find collection points, schedule pickups of recyclable materials and follow the collection calendar by region — making the process simpler and more accessible in everyday life."
     },

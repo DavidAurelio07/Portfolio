@@ -111,7 +111,10 @@
   },
   "projects": {
     "title": "Projetos",
+    "subtitle": "Clique em um projeto para ver mais detalhes.",
     "viewOnGithub": "Ver no GitHub",
+    "openDetails": "Ver detalhes",
+    "close": "Fechar",
     "ecoflux": {
       "description": "Plataforma web desenvolvida para facilitar o acesso à reciclagem e à coleta seletiva. O EcoFlux conecta cidadãos, pontos de coleta e empresas parceiras, permitindo consultar pontos de coleta, agendar a retirada de materiais recicláveis e acompanhar o calendário de coleta por região — tornando o processo mais simples e acessível no dia a dia."
     },

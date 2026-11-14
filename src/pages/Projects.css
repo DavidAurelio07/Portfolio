@@ -1,14 +1,58 @@
+/* =========================================================
+   PROJETOS — cabeçalho no visual synthwave da Home
+   ========================================================= */
+
 #projects {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 50px 0;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px 96px;
+  overflow-x: hidden;
 }
 
-#projects h2 {
-  font-size: 2.5rem;
-  margin-bottom: 30px;
-  color: var(--secondary);
-  text-shadow: 0 0 14px rgba(var(--secondary-rgb), 0.5);
+.projects-hero {
+  position: relative;
+  padding: 56px 20px 28px;
+  text-align: center;
+}
+
+.projects-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(var(--secondary-rgb), 0.08) 1px, transparent 1px),
+    linear-gradient(
+      90deg,
+      rgba(var(--secondary-rgb), 0.08) 1px,
+      transparent 1px
+    );
+  background-size: 48px 48px;
+  mask-image: linear-gradient(to bottom, #000 10%, transparent 95%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 10%, transparent 95%);
+  pointer-events: none;
+}
+
+.projects-title {
+  position: relative;
+  margin: 0 0 12px;
+  font-size: clamp(1.9rem, 4.5vw, 2.6rem);
+  line-height: 1.15;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 12px rgba(var(--primary-rgb), 0.35));
+}
+
+.projects-subtitle {
+  position: relative;
+  margin: 0 auto;
+  max-width: 520px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.projects-container {
+  margin-top: 16px;
 }

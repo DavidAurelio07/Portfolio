@@ -1,11 +1,18 @@
+/* =========================================================
+   PROJETOS — cards clicáveis + modal de detalhe (tema Synthwave)
+   ========================================================= */
+
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 24px;
+  width: 100%;
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 16px;
 }
+
+/* ---------- Card ---------- */
 
 .project-card {
   display: flex;
@@ -16,19 +23,23 @@
   border-radius: var(--radius);
   overflow: hidden;
   color: var(--text);
+  cursor: pointer;
   transition:
     transform 0.25s ease,
     border-color 0.25s ease,
     box-shadow 0.25s ease;
 }
 
-.project-card:hover {
+.project-card:hover,
+.project-card:focus-visible {
   transform: translateY(-6px);
   border-color: var(--primary);
   box-shadow: var(--glow-primary);
+  outline: none;
 }
 
-.project-card__image {
+.project-card__image,
+.project-card__placeholder {
   display: block;
   width: 100%;
   aspect-ratio: 16 / 9;
@@ -36,17 +47,46 @@
   border-bottom: 1px solid var(--line);
 }
 
+/* Placeholder neon para projeto sem imagem */
+.project-card__placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(
+      circle at 30% 20%,
+      rgba(var(--primary-rgb), 0.25),
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(var(--secondary-rgb), 0.22),
+      transparent 60%
+    ),
+    var(--bg-deep);
+}
+
+.project-card__placeholder span {
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 12px rgba(var(--primary-rgb), 0.4));
+}
+
 .project-card__body {
   display: flex;
   flex-direction: column;
   flex: 1;
-  gap: 10px;
+  gap: 12px;
   padding: 20px;
 }
 
 .project-card__title {
   margin: 0;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   color: var(--secondary);
 }
 
@@ -56,16 +96,157 @@
   font-size: 0.9rem;
   line-height: 1.5;
   color: var(--text-muted);
+  /* Mostra um resumo; o texto completo fica no modal */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-.project-card__link {
+.project-card__cta {
   align-self: flex-start;
-  margin-top: 8px;
-  padding: 8px 16px;
-  border: 1px solid var(--secondary);
-  border-radius: 6px;
-  color: var(--secondary);
+  margin-top: 4px;
+  color: var(--primary);
   font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.project-card__cta::after {
+  content: " →";
+}
+
+/* ---------- Chips de linguagem ---------- */
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.project-tech__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: var(--bg-deep);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--text-soft);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.project-tech__chip svg {
+  font-size: 0.95rem;
+}
+
+.project-tech--modal .project-tech__chip {
+  font-size: 0.85rem;
+  padding: 6px 12px;
+}
+
+/* ---------- Modal ---------- */
+
+.project-modal__backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(5, 1, 15, 0.8);
+  backdrop-filter: blur(4px);
+  animation: project-fade 0.2s ease;
+}
+
+.project-modal {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--primary);
+  border-radius: var(--radius);
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.6),
+    var(--glow-primary);
+  animation: project-pop 0.25s ease;
+}
+
+.project-modal .project-card__image,
+.project-modal .project-card__placeholder {
+  aspect-ratio: 16 / 9;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+}
+
+.project-modal__close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  color: var(--text);
+  background: rgba(5, 1, 15, 0.6);
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  font-size: 1rem;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.project-modal__close:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+  box-shadow: var(--glow-primary);
+}
+
+.project-modal__body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+}
+
+.project-modal__title {
+  margin: 0;
+  font-size: 1.6rem;
+  color: var(--secondary);
+  text-shadow: 0 0 14px rgba(var(--secondary-rgb), 0.5);
+}
+
+.project-modal__description {
+  margin: 0;
+  color: var(--text-soft);
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.project-modal__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  align-self: flex-start;
+  padding: 10px 20px;
+  color: var(--secondary);
+  border: 1px solid var(--secondary);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
   text-decoration: none;
   transition:
     background 0.2s ease,
@@ -73,14 +254,48 @@
     box-shadow 0.2s ease;
 }
 
-.project-card__link:hover {
+.project-modal__link:hover {
   background: var(--secondary);
   color: var(--bg);
   box-shadow: var(--glow-secondary);
 }
 
+@keyframes project-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes project-pop {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+}
+
+/* ---------- Celular ---------- */
+
 @media (max-width: 600px) {
   .projects-grid {
     grid-template-columns: 1fr;
+  }
+
+  .project-modal__title {
+    font-size: 1.35rem;
+  }
+}
+
+/* ---------- Quem prefere menos movimento ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card,
+  .project-modal__close,
+  .project-modal__link {
+    transition: none;
+  }
+
+  .project-modal__backdrop,
+  .project-modal {
+    animation: none;
   }
 }
