@@ -1,11 +1,7 @@
-import {
-  SiJavascript,
-  SiHtml5,
-  SiCss,
-  SiPython,
-} from "react-icons/si";
+import { SiJavascript, SiHtml5, SiCss, SiPython } from "react-icons/si";
 
 import ecofluxPage from "../assets/imagens/ecofluxPage.jpeg";
+import spaceEscapePage from "../assets/imagens/spaceEscape.jpeg";
 
 // Metadados de cada linguagem/tecnologia: ícone e cor da marca.
 // Reaproveitado pelos chips nos cards e no modal de detalhe.
@@ -38,7 +34,7 @@ export default function getProjects(t) {
       title: "SpaceEscape",
       description: t("projects.spaceEscape.description"),
       github: "https://github.com/DavidAurelio07/Trabalho-de-Algoritmo",
-      image: null,
+      image: spaceEscapePage,
       tech: ["python"],
     },
   ];
