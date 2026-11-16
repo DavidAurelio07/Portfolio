@@ -1,4 +1,13 @@
-import { SiJavascript, SiHtml5, SiCss, SiPython } from "react-icons/si";
+import {
+  SiJavascript,
+  SiHtml5,
+  SiCss,
+  SiPython,
+  SiReact,
+  SiSpringboot,
+  SiPostgresql,
+  SiOpenjdk,
+} from "react-icons/si";
 
 import ecofluxPage from "../assets/imagens/ecofluxPage.jpeg";
 import spaceEscapePage from "../assets/imagens/spaceEscape.jpeg";
@@ -10,6 +19,10 @@ export const TECH = {
   html: { label: "HTML", icon: SiHtml5, color: "#e34f26" },
   css: { label: "CSS", icon: SiCss, color: "#663399" },
   python: { label: "Python", icon: SiPython, color: "#3776ab" },
+  react: { label: "React", icon: SiReact, color: "#61dafb" },
+  java: { label: "Java", icon: SiOpenjdk, color: "#f89820" },
+  spring: { label: "Spring Boot", icon: SiSpringboot, color: "#6db33f" },
+  postgres: { label: "PostgreSQL", icon: SiPostgresql, color: "#4169e1" },
 };
 
 // Lista de projetos usada na Home e na página Projetos (fonte única).
@@ -36,6 +49,15 @@ export default function getProjects(t) {
       github: "https://github.com/DavidAurelio07/Trabalho-de-Algoritmo",
       image: spaceEscapePage,
       tech: ["python"],
+    },
+    {
+      id: 3,
+      title: "Bão de Roda",
+      description: t("projects.aluguelCarros.description"),
+      github:
+        "https://github.com/DavidAurelio07/desenvolvimento-e-integracao-de-aplicacoes-web/tree/main/AluguelCarros",
+      image: null,
+      tech: ["react", "javascript", "css", "java", "spring", "postgres"],
     },
   ];
 }

@@ -120,6 +120,9 @@
     },
     "spaceEscape": {
       "description": "Space Escape is a 2D game where the player controls a spaceship and must dodge meteors falling across the screen. During a run, repair kits appear at random and can be collected to restore the ship's health. The goal is to survive as long as possible and reach the highest score."
+    },
+    "aluguelCarros": {
+      "description": "Bão de Roda is a car rental web system built for the Web Application Development and Integration course (Software Engineering, PUC Minas). Customers sign up, log in and create, edit, view and cancel rental requests; agents (companies and banks) assess requests financially, execute the rental contract and, in the case of banks, grant credit — all tracked in one place, with the status always visible. The app follows the MVC architecture, with Spring Boot (Java) on the back-end, React + Vite on the front-end and PostgreSQL (Supabase) as the database, JWT authentication and BCrypt-hashed passwords."
     }
   },
   "resume": {

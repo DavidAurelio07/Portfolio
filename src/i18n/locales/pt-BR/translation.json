@@ -120,6 +120,9 @@
     },
     "spaceEscape": {
       "description": "Space Escape é um jogo 2D em que o jogador controla uma nave espacial e deve desviar dos meteoros que caem pela tela. Durante a partida, kits de reparo aparecem aleatoriamente e podem ser coletados para recuperar a vida da nave durante a partida. O objetivo é sobreviver pelo maior tempo possível e alcançar a maior pontuação."
+    },
+    "aluguelCarros": {
+      "description": "Bão de Roda é um sistema web de aluguel de carros desenvolvido no laboratório de Desenvolvimento e Integração de Aplicações Web (Engenharia de Software, PUC Minas). O cliente se cadastra, faz login e cria, modifica, consulta e cancela pedidos; os agentes (empresas e bancos) avaliam os pedidos financeiramente, executam o contrato de aluguel e, no caso dos bancos, concedem crédito — tudo acompanhado em um só lugar, com o status sempre visível. A aplicação segue a arquitetura MVC, com Spring Boot (Java) no back-end, React + Vite no front-end e PostgreSQL (Supabase) como banco, autenticação por JWT e senhas protegidas com BCrypt."
     }
   },
   "resume": {
