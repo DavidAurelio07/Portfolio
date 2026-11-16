@@ -128,8 +128,24 @@
     }
   },
   "resume": {
+    "title": "Currículo",
+    "subtitle": "Veja meu currículo abaixo, baixe em PDF ou abra em uma nova aba.",
+    "loading": "Carregando visualizador...",
     "download": "Baixar currículo",
-    "frameTitle": "Currículo de David"
+    "frameTitle": "Currículo de David",
+    "viewer": {
+      "language": "Idioma do currículo",
+      "pages_one": "{{count}} página",
+      "pages_other": "{{count}} páginas",
+      "zoom": "Zoom",
+      "zoomOut": "Diminuir zoom",
+      "zoomIn": "Aumentar zoom",
+      "fitWidth": "Ajustar à largura",
+      "download": "Baixar PDF",
+      "open": "Abrir",
+      "loadingPdf": "Carregando currículo...",
+      "error": "Não foi possível exibir o PDF aqui. Use os botões Baixar PDF ou Abrir."
+    }
   },
   "data": {
     "title": "Meus dados estatísticos no WakaTime e GitHub",

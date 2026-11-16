@@ -128,8 +128,24 @@
     }
   },
   "resume": {
+    "title": "Resume",
+    "subtitle": "View my resume below, download the PDF or open it in a new tab.",
+    "loading": "Loading viewer...",
     "download": "Download resume",
-    "frameTitle": "David's resume"
+    "frameTitle": "David's resume",
+    "viewer": {
+      "language": "Resume language",
+      "pages_one": "{{count}} page",
+      "pages_other": "{{count}} pages",
+      "zoom": "Zoom",
+      "zoomOut": "Zoom out",
+      "zoomIn": "Zoom in",
+      "fitWidth": "Fit to width",
+      "download": "Download PDF",
+      "open": "Open",
+      "loadingPdf": "Loading resume...",
+      "error": "Couldn't display the PDF here. Use the Download PDF or Open buttons."
+    }
   },
   "data": {
     "title": "My WakaTime and GitHub statistics",

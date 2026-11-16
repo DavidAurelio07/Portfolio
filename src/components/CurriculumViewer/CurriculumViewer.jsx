@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 import {
   FiDownload,
   FiExternalLink,
@@ -30,6 +31,7 @@ const { FILES, ZOOM_MIN, ZOOM_MAX, ZOOM_STEP } = CURRICULUM_CONFIG;
  * <CurriculumViewer files={[{ id: "pt", label: "PT", file: "/meu-cv.pdf", downloadName: "cv.pdf" }]} />
  */
 export default function CurriculumViewer({ files = FILES }) {
+  const { t } = useTranslation();
   const areaRef = useRef(null);
   const [current, setCurrent] = useState(files[0]);
   const [pages, setPages] = useState(0);
@@ -72,7 +74,7 @@ export default function CurriculumViewer({ files = FILES }) {
             <div
               className="cv-langs"
               role="group"
-              aria-label="Idioma do currículo"
+              aria-label={t("resume.viewer.language")}
             >
               {files.map((file) => (
                 <button
@@ -89,20 +91,20 @@ export default function CurriculumViewer({ files = FILES }) {
           )}
           {pages > 0 && (
             <span className="cv-pages">
-              {pages} {pages === 1 ? "página" : "páginas"}
+              {t("resume.viewer.pages", { count: pages })}
             </span>
           )}
         </div>
 
-        <div className="cv-zoom" role="group" aria-label="Zoom">
+        <div className="cv-zoom" role="group" aria-label={t("resume.viewer.zoom")}>
           <button
             type="button"
             onClick={() => changeZoom(-ZOOM_STEP)}
             disabled={zoom <= ZOOM_MIN}
-            title="Diminuir"
+            title={t("resume.viewer.zoomOut")}
           >
             <FiZoomOut aria-hidden="true" />
-            <span className="cv-sr">Diminuir zoom</span>
+            <span className="cv-sr">{t("resume.viewer.zoomOut")}</span>
           </button>
           <span className="cv-zoom-value" aria-live="polite">
             {Math.round(zoom * 100)}%
@@ -111,19 +113,19 @@ export default function CurriculumViewer({ files = FILES }) {
             type="button"
             onClick={() => changeZoom(ZOOM_STEP)}
             disabled={zoom >= ZOOM_MAX}
-            title="Aumentar"
+            title={t("resume.viewer.zoomIn")}
           >
             <FiZoomIn aria-hidden="true" />
-            <span className="cv-sr">Aumentar zoom</span>
+            <span className="cv-sr">{t("resume.viewer.zoomIn")}</span>
           </button>
           <button
             type="button"
             onClick={() => setZoom(1)}
             disabled={zoom === 1}
-            title="Ajustar à largura"
+            title={t("resume.viewer.fitWidth")}
           >
             <FiMaximize2 aria-hidden="true" />
-            <span className="cv-sr">Ajustar à largura</span>
+            <span className="cv-sr">{t("resume.viewer.fitWidth")}</span>
           </button>
         </div>
 
@@ -133,7 +135,7 @@ export default function CurriculumViewer({ files = FILES }) {
             href={current.file}
             download={current.downloadName}
           >
-            <FiDownload aria-hidden="true" /> Baixar PDF
+            <FiDownload aria-hidden="true" /> {t("resume.viewer.download")}
           </a>
           <a
             className="cv-button"
@@ -141,7 +143,7 @@ export default function CurriculumViewer({ files = FILES }) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FiExternalLink aria-hidden="true" /> Abrir
+            <FiExternalLink aria-hidden="true" /> {t("resume.viewer.open")}
           </a>
         </div>
       </div>
@@ -150,17 +152,14 @@ export default function CurriculumViewer({ files = FILES }) {
       <div className="cv-area" ref={areaRef}>
         {loading && (
           <p className="cv-status" role="status">
-            <span className="cv-spinner" aria-hidden="true" /> Carregando
-            currículo...
+            <span className="cv-spinner" aria-hidden="true" />{" "}
+            {t("resume.viewer.loadingPdf")}
           </p>
         )}
 
         {error ? (
           // Falha de rede ou navegador antigo: os botões acima continuam funcionando
-          <p className="cv-status cv-error">
-            Não foi possível exibir o PDF aqui. Use os botões{" "}
-            <strong>Baixar PDF</strong> ou <strong>Abrir</strong>.
-          </p>
+          <p className="cv-status cv-error">{t("resume.viewer.error")}</p>
         ) : (
           <Document
             key={current.file}
