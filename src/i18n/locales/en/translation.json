@@ -11,7 +11,9 @@
     "data": "Stats",
     "resume": "Resume",
     "projects": "Projects",
-    "contact": "Contact"
+    "contact": "Contact",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
   },
   "switcher": {
     "label": "Language",

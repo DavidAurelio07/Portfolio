@@ -11,7 +11,9 @@
     "data": "Dados",
     "resume": "Currículo",
     "projects": "Projetos",
-    "contact": "Contato"
+    "contact": "Contato",
+    "openMenu": "Abrir menu",
+    "closeMenu": "Fechar menu"
   },
   "switcher": {
     "label": "Idioma",

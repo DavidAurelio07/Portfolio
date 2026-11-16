@@ -1,44 +1,232 @@
-header {
+/* =========================================================
+   HEADER — barra fixa, menu hambúrguer no mobile (Synthwave)
+   ========================================================= */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
   width: 100%;
-  padding: 25px;
+  background: rgba(8, 1, 24, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(var(--primary-rgb), 0.45);
+  box-shadow: 0 4px 24px rgba(var(--primary-rgb), 0.15);
+}
+
+.site-header__inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
   gap: 16px;
-  text-align: center;
-  background-color: var(--bg-deep);
-  border-bottom: 1px solid rgba(var(--primary-rgb), 0.45);
-  box-shadow: 0 4px 24px rgba(var(--primary-rgb), 0.15);
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 24px;
   box-sizing: border-box;
 }
 
-header nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
+/* ---------- Marca ---------- */
+
+.site-header__brand {
+  flex-shrink: 0;
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 10px rgba(var(--primary-rgb), 0.3));
 }
 
-header nav a {
+/* ---------- Botão hambúrguer (só mobile) ---------- */
+
+.site-header__toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.site-header__toggle:hover {
+  color: var(--secondary);
+  border-color: var(--secondary);
+  box-shadow: var(--glow-secondary);
+}
+
+/* ---------- Navegação ---------- */
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.site-nav__list {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-nav__link {
+  position: relative;
   color: var(--text);
   text-decoration: none;
+  font-size: 0.95rem;
+  padding: 4px 0;
   transition:
     color 0.2s ease,
     text-shadow 0.2s ease;
 }
 
-header nav a:hover {
+.site-nav__link:hover {
   color: var(--secondary);
   text-shadow: 0 0 10px rgba(var(--secondary-rgb), 0.7);
 }
 
-@media (max-width: 600px) {
-  header {
-    justify-content: center;
+/* Barrinha neon sob o link ativo */
+.site-nav__link.is-active {
+  color: var(--secondary);
+}
+
+.site-nav__link.is-active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--primary);
+  box-shadow: var(--glow-primary);
+}
+
+.site-nav__lang {
+  display: flex;
+}
+
+/* ---------- Fundo escuro do menu mobile ---------- */
+
+.site-header__backdrop {
+  display: none;
+}
+
+/* =========================================================
+   Mobile / tablet
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .site-header__toggle {
+    display: inline-flex;
+    order: 2;
   }
 
-  header nav {
+  .site-header__backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 90;
+    border: none;
+    background: rgba(5, 1, 15, 0.6);
+    backdrop-filter: blur(2px);
+    cursor: pointer;
+    animation: header-fade 0.2s ease;
+  }
+
+  /* Painel que desliza da direita */
+  .site-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 95;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    width: min(78vw, 300px);
+    height: 100dvh;
+    padding: 84px 24px 32px;
+    background: var(--bg-deep);
+    border-left: 1px solid rgba(var(--primary-rgb), 0.4);
+    box-shadow: -8px 0 40px rgba(0, 0, 0, 0.5);
+    transform: translateX(100%);
+    transition: transform 0.28s ease;
+    overflow-y: auto;
+  }
+
+  .site-nav.is-open {
+    transform: translateX(0);
+  }
+
+  .site-nav__list {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+  }
+
+  .site-nav__link {
+    display: block;
+    padding: 14px 12px;
+    font-size: 1.05rem;
+    border-radius: 8px;
+    border: 1px solid transparent;
+  }
+
+  .site-nav__link:hover {
+    background: var(--surface);
+  }
+
+  .site-nav__link.is-active {
+    background: var(--surface);
+    border-color: var(--line);
+  }
+
+  /* No mobile a barrinha vira um traço à esquerda */
+  .site-nav__link.is-active::after {
+    left: 0;
+    right: auto;
+    top: 10px;
+    bottom: 10px;
+    width: 3px;
+    height: auto;
+  }
+
+  .site-nav__lang {
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
     justify-content: center;
-    gap: 20px;
+  }
+}
+
+@keyframes header-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+/* ---------- Quem prefere menos movimento ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .site-nav {
+    transition: none;
+  }
+
+  .site-header__backdrop {
+    animation: none;
   }
 }
